@@ -416,7 +416,7 @@ footer p {
     box-shadow: 0 0 5px 0 var(--element-color);
 }
 
-#submit {
+.submit {
     background: var(--element-color);
     color: white;
     border: none;
@@ -427,8 +427,9 @@ footer p {
     transition: 0.3s;
 }
 
-#submit:hover {
+.submit:hover {
     background: var(--element-color);
+    scale: 1.1;
 }
 
 .login-form a {

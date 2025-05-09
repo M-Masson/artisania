@@ -80,6 +80,7 @@ const openModal = ()=>{
     submitBtn.setAttribute("type", "submit")
     submitBtn.setAttribute("value", "Se connecter")
 
+
     const singinBtn = document.createElement("a")
     singinBtn.classList.add("singin-btn")
     singinBtn.setAttribute("href", "")
@@ -98,6 +99,7 @@ const openModal = ()=>{
     modalForm.appendChild(modalPasswordLabel)
     modalForm.appendChild(modalPasswordInput)
     modalForm.appendChild(errorMessage)
+    modalForm.appendChild(submitBtn)
     modalForm.appendChild(singinBtn)
     modalForm.appendChild(forgetBtn)
 
