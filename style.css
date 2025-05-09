@@ -3,6 +3,7 @@
     --background-color: #FAF3E0;
     --title-color: #3E2723;
     --text-color: #5C4033;
+    --logo-color: #629462;
 
 }
 * {
@@ -34,9 +35,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 0px 50px;
     backdrop-filter: blur(16px);
     box-shadow: -1px 1px 10px 0px rgba(88, 88, 88, 0.425);
+}
+#header-title{
+    font-family: "Qwigley", Georgia;
+    font-weight: 400;
+    font-size: 56px;
+    color: var(--logo-color);
+    text-align: center;
+    text-decoration: none;
+}
+#header-logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 
@@ -44,10 +58,11 @@ header img {
     width: 60px;
     height: auto;
     transition: 2s;
+    scale: 0.8
 }
-header img:hover{
-    transform: rotate(360deg) scale(1.8);
 
+#header-logo:hover #logo{
+    transform: rotate(360deg) scale(1.2);
     transition: 2s;
 }
 
@@ -69,10 +84,24 @@ nav a {
 
 nav ul li a:hover{
     background-color: rgba(230, 223, 205, 0.3);
-    transform: scale(1.15);
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+#connexion:hover{
+    transform: scale(1.1);
     transition: 0.2s;
 }
 
+#connexion{
+    background-color: var(--element-color);
+    border: none;
+    color: white;
+    display: flex;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
 /* ---------- SECTION 1 ---------- */
 #section1 {
     width: 100%;
@@ -89,7 +118,7 @@ nav ul li a:hover{
 
     padding: 150px 50px 0 50px; 
     margin-bottom: 50px;
-    margin-left: 200px;
+    margin-left: 11.5%;
     text-align: left;
     border-radius: 0 0 0 20px;
 }
@@ -121,7 +150,7 @@ nav ul li a:hover{
     gap: 100px;
     margin-bottom: 100px;
     padding-right: 200px;
-    padding-left: 200px;
+    padding-left: 11.5%;
 }
 
 #section2 img {
@@ -181,7 +210,7 @@ nav ul li a:hover{
     gap: 20px;
     margin-bottom: 40px;
     padding-right: 200px;
-    padding-left: 200px;
+    padding-left: 11.5%;
     height: auto;
 }
 
@@ -202,10 +231,16 @@ article .content div{
     padding: 20px;
     gap: 15px;
 }
-.content{
+.card-back .content{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 20px;
+
+}
+
+.card-back p {
+    min-height: 105px;
 }
 
 .article-img {
@@ -223,7 +258,7 @@ article p {
     min-height: 105px;
 }
 
-article a {
+.btn-plus {
     align-self: center;
     margin-top: 10px;
     width: 40px;
@@ -231,10 +266,15 @@ article a {
     border-radius: 50%;
     background-color: var(--element-color);
     display: flex;
+    cursor: pointer;
+    transition: 0.3s;
+    scale: 0.8;
+    padding: 5px;
 }
 
-article a:hover{
-    transform: scale(1.05);
+.btn-plus:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
 }
 
 article a img {
@@ -306,16 +346,111 @@ footer p {
 .card-back {
     transform: rotateY(180deg);
     background-color: #f1f1f1;
+    min-height: 600px;
 }
 
 .flip-btn{
-    position: absolute;
     scale: 0.1;
-    top: -210px;
-    right: -210px;
-    z-index: 8;
+    cursor: pointer;
+    order: 3;
 }
 .flip-btn:hover{
-    opacity: 0.6;
+    transform: rotate(180deg);
+    transition: 0.8s;
+}
+
+/* --------Modal--------- */
+
+.modal{
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+}
+
+.modal-page{
+    background: var(--background-color);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-family: Georgia, serif;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-form label {
+    text-align: left;
+    font-weight: 600;
+    color: #aaaaaa;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border: none;
+    box-shadow: 0 0 5px 0 var(--element-color);
+}
+
+#submit {
+    background: var(--element-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#submit:hover {
+    background: var(--element-color);
+}
+
+.login-form a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    color: var(--text-color);
+}
+
+.login-form a:hover {
+    color: var(--element-color);
+}
+
+.signin-btn{
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.error {
+    color: 	#ff4d4d;
+    font-size: 0.85rem;
+    text-align: left;
+    min-height: 1.2em;
 }
